@@ -7,6 +7,13 @@ const read = readline.createInterface({
     output: process.stdout
 });
 
+addition(a, b) {
+  return a + b;
+}
+
+soustraction(a, b) {
+  return a - b;
+}
 
 // le menu d'affichage
 function menuPrincipal() {
@@ -33,7 +40,18 @@ function gererChoix(choix) {
     case "3":
     case "4":
     case "5":
-      console.log("test");
+      rl.question("Premier nombre : ", (premier) => {
+        rl.question("Deuxième nombre : ", (deuxieme) => {
+
+          switch (choix) {
+            case "1":
+              resultat = calc.addition(a, b);
+              break;
+            case "2":
+              resultat = calc.soustraction(a, b);
+              break;
+        });
+      });
       break;
 
     case "6":
