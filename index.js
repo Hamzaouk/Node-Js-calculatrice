@@ -14,6 +14,16 @@ addition(a, b) {
 soustraction(a, b) {
   return a - b;
 }
+multiplication(a, b) {
+  return a * b;
+}
+
+division(a, b) {
+  if (b === 0) {
+    throw new Error("Pas de division par zéro !");
+  }
+  return a / b;
+}
 
 // le menu d'affichage
 function menuPrincipal() {
@@ -50,6 +60,12 @@ function gererChoix(choix) {
             case "2":
               resultat = calc.soustraction(a, b);
               break;
+            case "3":
+              resultat = calc.multiplication(a, b);
+              break;
+            case "4":
+              resultat = calc.division(a, b);
+              break;    
         });
       });
       break;
@@ -72,3 +88,4 @@ function gererChoix(choix) {
       break;
   }
 }
+menuPrincipal();
